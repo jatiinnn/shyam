@@ -113,7 +113,7 @@ export default function Navbar() {
               <ArrowLeft size={24} />
             </button>
             <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200">
-              <Image src="/logo.png" alt="DDSoft Logo" width={40} height={40} />
+              <Image src="/logo3.png" alt="DDSoft Logo" width={40} height={40} />
               <span className="text-2xl font-bold">DDSoft</span>
             </Link>
           </div>

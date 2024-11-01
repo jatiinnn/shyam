@@ -18,7 +18,6 @@ export default function Auth() {
   })
 
   useEffect(() => {
-    // Clear form data when component mounts or refreshes
     setFormData({ email: '', password: '' })
   }, [])
 
@@ -65,13 +64,16 @@ export default function Auth() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-2xl">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 py-12 px-4 sm:px-6 lg:px-8 relative">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-center bg-no-repeat opacity-5"></div>
+      </div>
+      <div className="max-w-md w-full space-y-8 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-10 rounded-xl shadow-2xl relative z-10">
         <div className="text-center">
-          <div className="flex justify-center mb-4">
-            <div className="relative w-20 h-20 group">
+          <div className="flex justify-center mb-6">
+            <div className="relative w-24 h-24 group">
               <Image
-                src="/logo.png"
+                src="/logo3.png"
                 alt="DDSoft Logo"
                 layout="fill"
                 objectFit="contain"
@@ -79,12 +81,12 @@ export default function Auth() {
               />
             </div>
           </div>
-          <h1 className="text-4xl font-extrabold text-gray-900 group">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300 ease-in-out group-hover:from-purple-600 group-hover:to-blue-500">
+          <h1 className="text-4xl font-extrabold text-white group mb-2">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 ease-in-out group-hover:from-purple-500 group-hover:to-blue-400">
               DDSoft
             </span>
           </h1>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          <h2 className="text-xl font-semibold text-gray-300">
             Sign in to your account
           </h2>
         </div>
@@ -102,7 +104,7 @@ export default function Auth() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                  className="appearance-none rounded-t-md relative block w-full px-3 py-3 pl-10 border border-gray-600 placeholder-gray-400 text-white bg-gray-700 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
                   value={formData.email}
                   onChange={handleInputChange}
@@ -121,7 +123,7 @@ export default function Auth() {
                   type={showPassword ? 'text' : 'password'}
                   autoComplete="current-password"
                   required
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                  className="appearance-none rounded-b-md relative block w-full px-3 py-3 pl-10 border border-gray-600 placeholder-gray-400 text-white bg-gray-700 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
                   value={formData.password}
                   onChange={handleInputChange}
@@ -142,13 +144,13 @@ export default function Auth() {
           </div>
 
           {error && (
-            <div className="text-red-500 text-sm text-center">{error}</div>
+            <div className="text-red-400 text-sm text-center bg-red-900 bg-opacity-50 py-2 rounded-md">{error}</div>
           )}
 
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out"
             >
               Sign in
             </button>
